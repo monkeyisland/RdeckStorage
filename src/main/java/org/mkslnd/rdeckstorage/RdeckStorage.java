@@ -1,28 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.mkslnd.rdeckstorage;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.security.Security;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.Base64;
 import java.util.Properties;
 import org.apache.commons.cli.*;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
-
 /**
  *
- * @author campom10
+ * @author Guybrush Threepwood
  */
 public class RdeckStorage {
        /**
@@ -110,30 +96,6 @@ public class RdeckStorage {
                     , properties.getProperty("rundeck.storage.converter.1.config.password")
                 );
             }
-
-/*
-   System.out.println(" Data Retrieved Successfully ..");
-   // Testing encryption.
-   try {
-       System.out.println("Probando encriptacion");
-        Security.addProvider(new BouncyCastleProvider());
-        StandardPBEStringEncryptor mySecondEncryptor = new StandardPBEStringEncryptor();
-        mySecondEncryptor.setProviderName("BC");
-        mySecondEncryptor.setAlgorithm(properties.getProperty("rundeck.storage.converter.1.config.algorithm"));
-        mySecondEncryptor.setPassword(properties.getProperty("rundeck.storage.converter.1.config.password"));
-//        byte[] myEncryptedBytes = new byte[] { (byte)0xe0, 0x4f, (byte)0xd0, 0x20, (byte)0xea, 0x3a, 0x69, 0x10, (byte)0xa2, (byte)0xd8, 0x08, 0x00, 0x2b, 0x30, 0x30, (byte)0x9d };
-
-        String  plainString =  mySecondEncryptor.decrypt(MyEncodedString);
-        System.out.println("Clear:"+plainString);
-
-//        String mySecondEncryptedText = mySecondEncryptor.encrypt(myText);
-
-   }
-   catch( Exception e) {
-        System.err.println( e.getClass().getName()+":"+e.getMessage());
-        System.exit(0);
-    }
-*/
 
     }// main
 }//RdeckStorage
